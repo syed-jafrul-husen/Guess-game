@@ -27,7 +27,7 @@ class Design extends Thread {
 
     JPanel jp;
     JTextArea t;
-    JTextArea t2;
+    JTextArea t2,t3;
     JTextArea f;
     JTextArea f2;
     JPanel jp2;
@@ -59,7 +59,7 @@ class Design extends Thread {
         f.setBackground(Color.GREEN);
         f.setPreferredSize(new Dimension(190, 40));
         jp.add(f);
-        Font myFont1 = new Font("English", Font.BOLD, 30);
+        Font myFont1 = new Font("English", Font.BOLD, 25);
         f.setForeground(Color.WHITE);
         f.setFont(myFont1);
 
@@ -67,24 +67,30 @@ class Design extends Thread {
         t2.setBackground(Color.GREEN);
         t2.setPreferredSize(new Dimension(400, 40));
         jp.add(t2);
-        Font myFont = new Font("English", Font.BOLD, 30);
+        Font myFont = new Font("English", Font.BOLD, 25);
         t2.setForeground(Color.CYAN);
         t2.setFont(myFont);
 
+        t3 = new JTextArea();
+        t3.setBackground(Color.GREEN);
+        Dimension d33 = new Dimension(580, 50);
+        t3.setPreferredSize(d33);
+        jp.add(t3);
+        Font myFont33 = new Font("English", Font.BOLD, 25);
+        t3.setForeground(Color.MAGENTA);
+        t3.setFont(myFont33);
+
+        
         t = new JTextArea();
         t.setBackground(Color.GREEN);
-        Dimension d2 = new Dimension(580, 50);
+        Dimension d2 = new Dimension(200,85);
         t.setPreferredSize(d2);
         jp.add(t);
-        Font myFont2 = new Font("English", Font.BOLD, 30);
-        t.setForeground(Color.MAGENTA);
+        Font myFont2 = new Font("English", Font.BOLD, 20);
+        t.setForeground(Color.RED);
         t.setFont(myFont2);
-
-        ta = new JTextArea();
-        ta.setBackground(Color.GREEN);
-        Dimension d9 = new Dimension(230, 85);
-        ta.setPreferredSize(d9);
-        jp.add(ta);
+        
+        
 
         j = new JLabel();
         j.setBackground(Color.WHITE);
@@ -183,17 +189,17 @@ class Design extends Thread {
         try {
             while (true) {
                 if (n == 1) {
-                    j.setIcon(new ImageIcon("D:\\North East University BangladeshCSE\\Java\\Java_theory+lab_class\\GuessGame\\dice1.jpg"));
+                    j.setIcon(new ImageIcon("F:\\Git and GitHub\\GuessGame\\dice1.jpg"));
                 } else if (n == 2) {
-                    j.setIcon(new ImageIcon("D:\\North East University BangladeshCSE\\Java\\Java_theory+lab_class\\GuessGame\\dice2.jpg"));
+                    j.setIcon(new ImageIcon("F:\\Git and GitHub\\GuessGame\\dice2.jpg"));
                 } else if (n == 3) {
-                    j.setIcon(new ImageIcon("D:\\North East University BangladeshCSE\\Java\\Java_theory+lab_class\\GuessGame\\dice3.jpg"));
+                    j.setIcon(new ImageIcon("F:\\Git and GitHub\\GuessGame\\dice3.jpg"));
                 } else if (n == 4) {
-                    j.setIcon(new ImageIcon("D:\\North East University BangladeshCSE\\Java\\Java_theory+lab_class\\GuessGame\\dice4.jpg"));
+                    j.setIcon(new ImageIcon("F:\\Git and GitHub\\GuessGame\\dice4.jpg"));
                 } else if (n == 5) {
-                    j.setIcon(new ImageIcon("D:\\North East University BangladeshCSE\\Java\\Java_theory+lab_class\\GuessGame\\dice5.jpg"));
+                    j.setIcon(new ImageIcon("F:\\Git and GitHub\\GuessGame\\dice5.jpg"));
                 } else if (n == 6) {
-                    j.setIcon(new ImageIcon("D:\\North East University BangladeshCSE\\Java\\Java_theory+lab_class\\GuessGame\\dice6.jpg"));
+                    j.setIcon(new ImageIcon("F:\\Git and GitHub\\GuessGame\\dice6.jpg"));
                 }
                 Thread.sleep(400);
             }
@@ -202,7 +208,7 @@ class Design extends Thread {
         }
 
     }
-    int point = 0;
+    int point = 1, neg=0,highScore=1;
 
     class MyButton implements ActionListener {
 
@@ -215,39 +221,87 @@ class Design extends Thread {
                     frame.setVisible(false);
                 }
                 if (name == "1" && n == 1) {
-                    t.setText("YOU WIN!");
+                    t.setText("Earn a point!");
+                    neg = 0;
                     ++point;
+                    if(point>highScore)
+                        highScore = point;
+                    t.setText("Wrong click "+neg+" times");
                     t2.setText(String.valueOf(point));
+                    t3.setText("High Score: "+highScore);
                 } else if (name == "2" && n == 2) {
-                    t.setText("YOU WIN!");
+                    t.setText("Earn a point!");
+                    neg = 0;
                     ++point;
+                    if(point>highScore)
+                        highScore = point;
+                    t.setText("Wrong click  "+neg+"  times");
                     t2.setText(String.valueOf(point));
+                    t3.setText("High Score: "+highScore);
 
                 } else if (name == "3" && n == 3) {
-                    t.setText("YOU WIN!");
-                    t2.setText(String.valueOf(point));
+                    t.setText("Earn a point!");
+                    neg = 0;
                     ++point;
+                    if(point>highScore)
+                        highScore = point;
+                    t.setText("Wrong click  "+neg+"  times");
+                    t2.setText(String.valueOf(point));
+                    t3.setText("High Score: "+highScore);
+                    
                 }
                 else if (name == "4" && n == 4) {
-                    t.setText("YOU WIN!");
-                    t2.setText(String.valueOf(point));
+                    t.setText("Earn a point!");
+                    neg = 0;
                     ++point;
+                    if(point>highScore)
+                        highScore = point;
+                    t.setText("Wrong click  "+neg+"  times");
+                    t2.setText(String.valueOf(point));
+                    t3.setText("High Score: "+highScore);
                 }
                 else if (name == "5" && n == 5) {
-                    t.setText("YOU WIN!");
-                    t2.setText(String.valueOf(point));
+                    t.setText("Earn a point!");
+                    neg = 0;
                     ++point;
+                    if(point>highScore)
+                        highScore = point;
+                    t.setText("Wrong click  "+neg+"  times");
+                    t2.setText(String.valueOf(point));
+                    t3.setText("High Score: "+highScore);
                 }
                 else if (name == "6" && n == 6) {
-                    t.setText("YOU WIN!");
-                    t2.setText(String.valueOf(point));
+                    t.setText("Earn a point!");
+                    neg = 0;
                     ++point;
-                }else {
-                    t.setText("YOU LOSS!");
+                    if(point>highScore)
+                        highScore = point;
+                    t.setText("Wrong click  "+neg+"  times");
                     t2.setText(String.valueOf(point));
+                    t3.setText("High Score: "+highScore);
+                    
+                }else {
+                    neg = neg +1;
+                    t.setText("Wrong click  "+neg+"  times");
+                    t3.setText("High Score: "+highScore);
+
+                    
+                    if(neg==3){
+                        neg = 0;
+                        point = point -1;}
+                    t2.setText(String.valueOf(point));
+                    if(point<0){
+                        t2.setText(" x......... You Lose .....x");
+                        neg = 0;
+                        Thread.sleep(500);
+                        frame.setVisible(false);
+                        gameOver over = new gameOver();
+                        over.Over(highScore);
+                        
+                    }
                 }
 
-                f.setText("Total Score:");
+                f.setText("Current Score:");
 
             } catch (Exception ex) {
                 System.out.println("Error " + ex.getMessage());
